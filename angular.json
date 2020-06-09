@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spotapp"
+    }
+  },
+  "defaultProject": "spotapp",
+  "cli": {
+    "analytics": false
+  }
 }
