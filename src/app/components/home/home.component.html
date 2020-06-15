@@ -4,7 +4,8 @@
         <img [src]='novedad.images[0].url' class="card-img-top" [alt]="novedad.name">
         <div class="card-body">
             <h5 class="card-title">{{novedad.name}}</h5>
-            <p *ngFor="let artista of novedad.artists" class="card-text">{{artista.name}} </p>
+            <span *ngFor="let artista of novedad.artists" class="badge badge-pill badge-danger">{{artista.name}}</span>
+            <br><br>
             <a [href]="novedad.external_urls.spotify" class="btn btn-success">Go SpotiFy </a>
         </div>
     </div>

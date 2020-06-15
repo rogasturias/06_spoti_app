@@ -1,1 +1,19 @@
-<p>search works!</p>
+<div class="row">
+    <div class="col">
+        <input #buscado type="text" (keyup)="buscar(buscado.value)" placeholder="nombre artista..." class="form-control">
+    </div>
+</div>
+
+<h1 class="m-4">Busqueda</h1>
+<div class="card-columns">
+    <div *ngFor="let artista of busqueda" class="card" style="width: 18rem;">
+
+        <img [src]='artista.images[0].url' class="card-img-top" [alt]="artista.name">
+        <div class="card-body">
+            <h5 class="card-title">{{artista.name}}</h5>
+
+            <a *ngIf="artista.external_urls.spotify" [href]="artista.external_urls.spotify" class="btn btn-success">Go SpotiFy </a>
+        </div>
+
+    </div>
+</div>
