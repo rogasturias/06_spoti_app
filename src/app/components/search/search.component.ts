@@ -9,12 +9,13 @@ import { map } from 'rxjs/operators';
 })
 export class SearchComponent  {
   public busqueda: any [] = [];
+  public cargando = true;
   constructor(private spotify1Service: Spotify1Service) { }
 
   buscar(buscado: string) {
   this.spotify1Service.getBusqueda(buscado).subscribe( (resp: any) => {
   this.busqueda = resp;
-  console.log(resp);
+  this.cargando = false;
   });
   }
 

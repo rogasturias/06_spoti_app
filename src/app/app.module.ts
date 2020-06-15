@@ -12,6 +12,9 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 
 import { ROUTES } from './app.routes';
 import { HttpClientModule} from '@angular/common/http';
+import { PipeNuloPipe } from './pipes/pipe-nulo.pipe';
+import { TarjetasComponent } from './components/shared/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HttpClientModule} from '@angular/common/http';
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
-    AcercaComponent
+    AcercaComponent,
+    PipeNuloPipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

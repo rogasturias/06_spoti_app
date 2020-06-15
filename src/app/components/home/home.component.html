@@ -1,12 +1,3 @@
-<h1>Novedades</h1>
-<div class="card-columns">
-    <div *ngFor="let novedad of novedades" class="card" style="width: 18rem;">
-        <img [src]='novedad.images[0].url' class="card-img-top" [alt]="novedad.name">
-        <div class="card-body">
-            <h5 class="card-title">{{novedad.name}}</h5>
-            <span *ngFor="let artista of novedad.artists" class="badge badge-pill badge-danger">{{artista.name}}</span>
-            <br><br>
-            <a [href]="novedad.external_urls.spotify" class="btn btn-success">Go SpotiFy </a>
-        </div>
-    </div>
-</div>
+<h1> Novedades</h1>
+<app-loading *ngIf="cargando"></app-loading>
+<app-tarjetas [items]="novedades"></app-tarjetas>
