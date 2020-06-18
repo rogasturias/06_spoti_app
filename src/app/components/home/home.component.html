@@ -1,3 +1,4 @@
 <h1> Novedades</h1>
-<app-loading *ngIf="cargando"></app-loading>
+<app-loading *ngIf="cargando && !flagError"></app-loading>
+<app-mensaje-error *ngIf="flagError" [mensaje]="mensajeError"></app-mensaje-error>
 <app-tarjetas [items]="novedades"></app-tarjetas>

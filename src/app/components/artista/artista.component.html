@@ -1,1 +1,43 @@
-<p>artista works!</p>
+<app-loading *ngIf="cargando && !flagError"></app-loading>
+<app-mensaje-error *ngIf="flagError" [mensaje]="mensajeError"></app-mensaje-error>
+
+<div *ngIf="!cargando" class="row">
+    <div class="col-2">
+        <img [src]='artista.images | pipeNulo' class="img-thumbnail img-circle" [alt]="artista.name">
+    </div>
+    <div class="col-">
+        <h1>{{artista.name}}</h1>
+        <a [href]="artista.external_urls.spotify" target="_blank">Ir a la pagina </a>
+    </div>
+    <div class="col-4 text-right">
+        <a class="btn btn-success" routerLink="search">Inicio </a>
+
+    </div>
+</div>
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <th>foto</th>
+                <th>album</th>
+                <th>cancion</th>
+                <th>Full song</th>
+                <th>Sample</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor=" let dato of artistaTop">
+                    <td> <img [src]="dato.album.images | pipeNulo" class="img-thumb"></td>
+                    <td>{{dato.album.name}}</td>
+                    <td>{{dato.name}}</td>
+                    <td><iframe controls [src]="dato.uri| domseguro:'https://open.spotify.com/embed?uri='" width="250" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                    <td><audio [src]="dato.preview_url" controls></audio>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

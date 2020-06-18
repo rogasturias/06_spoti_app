@@ -15,6 +15,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { PipeNuloPipe } from './pipes/pipe-nulo.pipe';
 import { TarjetasComponent } from './components/shared/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { MensajeErrorComponent } from './components/shared/mensaje-error/mensaje-error.component';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +28,10 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     AcercaComponent,
     PipeNuloPipe,
+    DomseguroPipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    MensajeErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 export const ROUTES: Routes = [
     { path: 'search', component: SearchComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'artista', component: ArtistaComponent },
+    { path: 'artista/:id', component: ArtistaComponent },
     { path: 'acerca', component: AcercaComponent },
     // vacios o cualquier otro se va al home
     { path: '**', pathMatch: 'full', redirectTo: 'home' },

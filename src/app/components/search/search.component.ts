@@ -10,13 +10,22 @@ import { map } from 'rxjs/operators';
 export class SearchComponent  {
   public busqueda: any [] = [];
   public cargando = true;
-  constructor(private spotify1Service: Spotify1Service) { }
+  flagError: boolean;
+  mensajeError: string;
+
+  constructor(private spotify1Service: Spotify1Service) {
+  }
 
   buscar(buscado: string) {
   this.spotify1Service.getBusqueda(buscado).subscribe( (resp: any) => {
+  this.flagError = false;
   this.busqueda = resp;
   this.cargando = false;
-  });
+  }, (errorServicio) => {
+    console.error(errorServicio);
+    this.flagError = true;
+    this.mensajeError = errorServicio.error.error.message;
+    });
   }
 
 }

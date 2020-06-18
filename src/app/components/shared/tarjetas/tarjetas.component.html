@@ -1,9 +1,9 @@
 <div class="card-columns">
-    <div *ngFor="let item of items" class="card" style="width: 18rem;">
+    <div *ngFor="let item of items" (click)="verArtista(item)" class="card puntero" style="width: 18rem;">
         <img [src]='item.images | pipeNulo' class="card-img-top" [alt]="item.name">
         <div class="card-body">
             <h5 class="card-title">{{item.name}}</h5>
-            <span *ngFor="let artista of item.artists" class="badge badge-pill badge-danger">{{artista.name}}</span>
+            <span *ngFor="let artista of item.artists" (click)="verArtistaId(artista.id)" class="badge badge-pill badge-danger">{{artista.name}}</span>
             <br><br>
             <a [href]="item.external_urls.spotify" class="btn btn-success">Go SpotiFy </a>
         </div>
